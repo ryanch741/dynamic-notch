@@ -1,5 +1,0 @@
----
-triple:          'arm64-apple-darwin'
-binary-path:     '/Users/ryan/Learn/BarHold/NotchIsland/build/Build/Products/Release/NotchIsland.app/Contents/MacOS/NotchIsland'
-relocations:     []
-...

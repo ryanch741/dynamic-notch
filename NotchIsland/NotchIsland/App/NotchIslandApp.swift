@@ -15,9 +15,6 @@ struct NotchIslandApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
     var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
         Settings {
             SettingsView()
         }
@@ -532,6 +529,14 @@ struct NotchBarView: View {
         }
     }
     
+    // 周几字符串
+    private var weekdayString: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EEEE"
+        formatter.locale = Locale(identifier: "zh_CN")
+        return formatter.string(from: Date())
+    }
+    
     var body: some View {
         ZStack(alignment: .top) {
             // 背景由 CAShapeLayer 绘制，这里不需要
@@ -570,8 +575,15 @@ struct NotchBarView: View {
                                 .foregroundStyle(.white.opacity(0.4))
                                 .frame(maxWidth: .infinity, alignment: .center)
                             
-                            WeatherInfoView(compact: false)
+                            // 右侧显示周几
+                            Text(weekdayString)
+                                .font(.system(size: 11, weight: .regular))
+                                .foregroundStyle(.white.opacity(0.8))
                                 .frame(maxWidth: .infinity, alignment: .trailing)
+                            
+                            // 天气模块已隐藏
+                            // WeatherInfoView(compact: false)
+                            //     .frame(maxWidth: .infinity, alignment: .trailing)
                         }
                         .frame(height: 32)
                         .padding(.horizontal, 16)
@@ -643,15 +655,15 @@ struct NotchBarView: View {
                         .padding(.top, 4)
                         .transition(.opacity)
                     } else {
-                        // 收起状态：同样向上偏移
+                        // 收起状态：只显示时间和日期
                         HStack(spacing: 8) {
                             TimeInfoView(compact: true)
-                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .frame(maxWidth: .infinity, alignment: .center)
                             
-                            Spacer(minLength: 20)  // 中间留空（刘海区域）
-                            
-                            WeatherInfoView(compact: true)
-                                .frame(maxWidth: .infinity, alignment: .trailing)
+                            // 天气模块已隐藏
+                            // Spacer(minLength: 20)
+                            // WeatherInfoView(compact: true)
+                            //     .frame(maxWidth: .infinity, alignment: .trailing)
                         }
                         .frame(height: 30)
                         .padding(.horizontal, 12)
