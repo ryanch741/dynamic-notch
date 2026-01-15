@@ -1,0 +1,64 @@
+{
+  "source": "/Users/ryan/Learn/BarHold/NotchIsland/NotchIsland/Modules/Shortcuts/ShortcutGridView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "快捷方式",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 20
+        }
+      },
+      {
+        "comment": "",
+        "key": "(%lld)",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 25
+        }
+      },
+      {
+        "comment": "",
+        "key": "完成",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 41
+        }
+      },
+      {
+        "comment": "",
+        "key": "编辑",
+        "location": {
+          "startingColumn": 49,
+          "startingLine": 41
+        }
+      },
+      {
+        "comment": "",
+        "key": "添加快捷方式",
+        "location": {
+          "startingColumn": 23,
+          "startingLine": 53
+        }
+      },
+      {
+        "comment": "",
+        "key": "暂无快捷方式",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 66
+        }
+      },
+      {
+        "comment": "",
+        "key": "点击 + 添加",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 69
+        }
+      }
+    ]
+  },
+  "version": 1
+}

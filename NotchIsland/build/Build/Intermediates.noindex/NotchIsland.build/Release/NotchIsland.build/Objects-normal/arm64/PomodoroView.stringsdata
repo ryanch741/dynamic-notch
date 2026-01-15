@@ -1,0 +1,104 @@
+{
+  "source": "/Users/ryan/Learn/BarHold/NotchIsland/NotchIsland/Modules/Pomodoro/PomodoroView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "番茄钟",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 17
+        }
+      },
+      {
+        "comment": "",
+        "key": "开始",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 74
+        }
+      },
+      {
+        "comment": "",
+        "key": "开始专注",
+        "location": {
+          "startingColumn": 35,
+          "startingLine": 72
+        }
+      },
+      {
+        "comment": "",
+        "key": "继续",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 91
+        }
+      },
+      {
+        "comment": "",
+        "key": "继续",
+        "location": {
+          "startingColumn": 35,
+          "startingLine": 89
+        }
+      },
+      {
+        "comment": "",
+        "key": "暂停",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 108
+        }
+      },
+      {
+        "comment": "",
+        "key": "暂停",
+        "location": {
+          "startingColumn": 35,
+          "startingLine": 106
+        }
+      },
+      {
+        "comment": "",
+        "key": "跳过",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 127
+        }
+      },
+      {
+        "comment": "",
+        "key": "跳过",
+        "location": {
+          "startingColumn": 35,
+          "startingLine": 125
+        }
+      },
+      {
+        "comment": "",
+        "key": "停止",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 146
+        }
+      },
+      {
+        "comment": "",
+        "key": "停止",
+        "location": {
+          "startingColumn": 35,
+          "startingLine": 144
+        }
+      },
+      {
+        "comment": "",
+        "key": "已完成 %lld 个番茄钟",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 159
+        }
+      }
+    ]
+  },
+  "version": 1
+}

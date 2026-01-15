@@ -1,0 +1,112 @@
+{
+  "source": "/Users/ryan/Learn/BarHold/NotchIsland/NotchIsland/Modules/Shortcuts/ShortcutEditorView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "添加快捷方式",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 19
+        }
+      },
+      {
+        "comment": "",
+        "key": "类型",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 24
+        }
+      },
+      {
+        "comment": "",
+        "key": "网站",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 25
+        }
+      },
+      {
+        "comment": "",
+        "key": "应用程序",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 26
+        }
+      },
+      {
+        "comment": "",
+        "key": "文件夹",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 27
+        }
+      },
+      {
+        "comment": "",
+        "key": "baidu.com",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 51
+        }
+      },
+      {
+        "comment": "",
+        "key": "网址",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 40
+        }
+      },
+      {
+        "comment": "",
+        "key": "名称",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 64
+        }
+      },
+      {
+        "comment": "",
+        "key": "输入名称",
+        "location": {
+          "startingColumn": 27,
+          "startingLine": 68
+        }
+      },
+      {
+        "comment": "",
+        "key": "选择路径",
+        "location": {
+          "startingColumn": 35,
+          "startingLine": 80
+        }
+      },
+      {
+        "comment": "",
+        "key": "浏览...",
+        "location": {
+          "startingColumn": 32,
+          "startingLine": 84
+        }
+      },
+      {
+        "comment": "",
+        "key": "取消",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 96
+        }
+      },
+      {
+        "comment": "",
+        "key": "添加",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 101
+        }
+      }
+    ]
+  },
+  "version": 1
+}
