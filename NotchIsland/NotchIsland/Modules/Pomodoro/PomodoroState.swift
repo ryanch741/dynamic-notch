@@ -17,9 +17,9 @@ enum PomodoroPhase: String, Codable {
 
 /// 番茄钟配置
 struct PomodoroConfig: Codable {
-    var focusDuration: TimeInterval = 10               // 专注时长（10 秒，测试用）
-    var shortBreakDuration: TimeInterval = 5           // 短休息时长（5 秒，测试用）
-    var longBreakDuration: TimeInterval = 10           // 长休息时长（10 秒，测试用）
+    var focusDuration: TimeInterval = 25 * 60          // 专注时长（25 分钟）
+    var shortBreakDuration: TimeInterval = 5 * 60      // 短休息时长（5 分钟）
+    var longBreakDuration: TimeInterval = 15 * 60      // 长休息时长（15 分钟）
     var longBreakInterval: Int = 4                     // 长休息间隔（默认每 4 个番茄钟）
     var autoStartBreaks: Bool = false                  // 自动开始休息
     var autoStartPomodoros: Bool = false               // 自动开始下一个番茄钟
