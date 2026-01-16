@@ -570,7 +570,7 @@ struct NotchBarView: View {
                             TimeInfoView(compact: false)
                                 .frame(maxWidth: .infinity, alignment: .leading)
                             
-                            Text("灵动刘海")
+                            Text(LocalizedStringKey("灵动刘海"))
                                 .font(.system(size: 10, weight: .regular))
                                 .foregroundStyle(.white.opacity(0.4))
                                 .frame(maxWidth: .infinity, alignment: .center)
@@ -712,9 +712,9 @@ struct MainMenuView: View {
                         .cornerRadius(8)
                     
                     VStack(alignment: .leading, spacing: 2) {
-                        Text("灵动刘海")
+                        Text(LocalizedStringKey("灵动刘海"))
                             .font(.headline)
-                        Text("效率增强助手")
+                        Text(LocalizedStringKey("效率增强助手"))
                             .font(.caption)
                             .foregroundColor(.secondary)
                     }
@@ -722,11 +722,11 @@ struct MainMenuView: View {
 
                 Divider()
 
-                Button("打开设置…") {
+                Button(LocalizedStringKey("设置")) {
                     NotificationCenter.default.post(name: .openSettings, object: nil)
                 }
 
-                Button("退出灵动刘海") {
+                Button(LocalizedStringKey("退出")) {
                     NSApp.terminate(nil)
                 }
             }
@@ -754,7 +754,7 @@ struct SettingsView: View {
                             .cornerRadius(12)
                         
                         VStack(alignment: .leading, spacing: 4) {
-                            Text("灵动刘海")
+                            Text(LocalizedStringKey("灵动刘海"))
                                 .font(.title2)
                                 .fontWeight(.bold)
                             Text("Version 1.0.0")
@@ -764,14 +764,14 @@ struct SettingsView: View {
                     }
                     .padding(.vertical, 8)
                     
-                    Text("一款为您设计的 macOS 刘海屏效率增强工具。")
+                    Text(LocalizedStringKey("软件介绍"))
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                 }
             }
             
-            Section(header: Text("显示设置")) {
-                Toggle("在副屏显示刘海", isOn: $showSecondaryScreenNotch)
+            Section(header: Text(LocalizedStringKey("显示设置"))) {
+                Toggle(LocalizedStringKey("在副屏显示刘海"), isOn: $showSecondaryScreenNotch)
                     .help("开启后，外接显示器也会显示模拟刘海条")
             }
             
@@ -786,7 +786,7 @@ struct SettingsView: View {
                 HStack {
                     Text("版权")
                     Spacer()
-                    Text("© 2026 灵动刘海")
+                    Text("© 2026 Dynamic Notch")
                         .foregroundColor(.secondary)
                 }
             }

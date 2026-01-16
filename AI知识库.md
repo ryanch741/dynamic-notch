@@ -6,7 +6,7 @@
 
 - **项目名称**：
   - 中文：灵动刘海
-  - 英文：Notch Island
+  - 英文：Dynamic Notch
 - **项目目标**：
   - 将 Mac 刘海区域打造成信息中心，类似 NookX/NotchNook。
   - 提供时间、天气、音乐、番茄钟、待办、AI 对话等功能。
