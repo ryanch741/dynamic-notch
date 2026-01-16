@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>NSAppleEventsUsageDescription</key>
-	<string>Notch Island 需要访问音乐应用以显示和控制当前播放信息</string>
+	<string>灵动刘海需要访问音乐应用以显示和控制当前播放信息</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.productivity</string>
 	<key>CFBundleName</key>
-	<string>Notch Island</string>
+	<string>灵动刘海</string>
 	<key>CFBundleDisplayName</key>
-	<string>Notch Island</string>
+	<string>灵动刘海</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2026 hianzuo. All rights reserved.</string>
 	<key>CFBundleIdentifier</key>

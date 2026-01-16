@@ -570,7 +570,7 @@ struct NotchBarView: View {
                             TimeInfoView(compact: false)
                                 .frame(maxWidth: .infinity, alignment: .leading)
                             
-                            Text("NotchIsland")
+                            Text("灵动刘海")
                                 .font(.system(size: 10, weight: .regular))
                                 .foregroundStyle(.white.opacity(0.4))
                                 .frame(maxWidth: .infinity, alignment: .center)
@@ -712,7 +712,7 @@ struct MainMenuView: View {
                         .cornerRadius(8)
                     
                     VStack(alignment: .leading, spacing: 2) {
-                        Text("Notch Island")
+                        Text("灵动刘海")
                             .font(.headline)
                         Text("效率增强助手")
                             .font(.caption)
@@ -726,7 +726,7 @@ struct MainMenuView: View {
                     NotificationCenter.default.post(name: .openSettings, object: nil)
                 }
 
-                Button("退出 Notch Island") {
+                Button("退出灵动刘海") {
                     NSApp.terminate(nil)
                 }
             }
@@ -754,7 +754,7 @@ struct SettingsView: View {
                             .cornerRadius(12)
                         
                         VStack(alignment: .leading, spacing: 4) {
-                            Text("Notch Island")
+                            Text("灵动刘海")
                                 .font(.title2)
                                 .fontWeight(.bold)
                             Text("Version 1.0.0")
@@ -786,7 +786,7 @@ struct SettingsView: View {
                 HStack {
                     Text("版权")
                     Spacer()
-                    Text("© 2026 Notch Island")
+                    Text("© 2026 灵动刘海")
                         .foregroundColor(.secondary)
                 }
             }
