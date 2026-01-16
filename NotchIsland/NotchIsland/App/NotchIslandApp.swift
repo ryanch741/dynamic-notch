@@ -705,10 +705,20 @@ struct MainMenuView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             VStack(alignment: .leading, spacing: 12) {
-                Text("NotchIsland")
-                    .font(.headline)
-                Text("刘海效率岛（开发中）")
-                    .font(.subheadline)
+                HStack(spacing: 12) {
+                    Image("app_icon_1024")
+                        .resizable()
+                        .frame(width: 40, height: 40)
+                        .cornerRadius(8)
+                    
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text("Notch Island")
+                            .font(.headline)
+                        Text("效率增强助手")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                    }
+                }
 
                 Divider()
 
@@ -716,7 +726,7 @@ struct MainMenuView: View {
                     NotificationCenter.default.post(name: .openSettings, object: nil)
                 }
 
-                Button("退出应用") {
+                Button("退出 Notch Island") {
                     NSApp.terminate(nil)
                 }
             }
@@ -735,19 +745,54 @@ struct SettingsView: View {
     
     var body: some View {
         Form {
-            Section(header: Text("显示设置")) {
-                Toggle("在副屏显示刘海", isOn: $showSecondaryScreenNotch)
-                    .help("开启后，副屏也会显示模拟刘海条")
+            Section {
+                VStack(alignment: .leading, spacing: 8) {
+                    HStack(spacing: 12) {
+                        Image("app_icon_1024")
+                            .resizable()
+                            .frame(width: 64, height: 64)
+                            .cornerRadius(12)
+                        
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text("Notch Island")
+                                .font(.title2)
+                                .fontWeight(.bold)
+                            Text("Version 1.0.0")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                        }
+                    }
+                    .padding(.vertical, 8)
+                    
+                    Text("一款为您设计的 macOS 刘海屏效率增强工具。")
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                }
             }
             
-            Section(header: Text("其他设置")) {
-                Text("待实现：主题、开机自启、模块开关等")
-                    .font(.caption)
-                    .foregroundColor(.secondary)
+            Section(header: Text("显示设置")) {
+                Toggle("在副屏显示刘海", isOn: $showSecondaryScreenNotch)
+                    .help("开启后，外接显示器也会显示模拟刘海条")
+            }
+            
+            Section(header: Text("关于")) {
+                HStack {
+                    Text("开发者")
+                    Spacer()
+                    Text("hianzuo")
+                        .foregroundColor(.secondary)
+                }
+                
+                HStack {
+                    Text("版权")
+                    Spacer()
+                    Text("© 2026 Notch Island")
+                        .foregroundColor(.secondary)
+                }
             }
         }
         .formStyle(.grouped)
-        .frame(minWidth: 480, minHeight: 320)
+        .frame(minWidth: 480, minHeight: 400)
     }
 }
 
