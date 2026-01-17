@@ -82,13 +82,13 @@ extension PomodoroPhase {
     var displayName: String {
         switch self {
         case .idle:
-            return "空闲"
+            return NSLocalizedString("未开始", comment: "")
         case .focus:
-            return "专注中"
+            return NSLocalizedString("专注中", comment: "")
         case .shortBreak:
-            return "短休息"
+            return NSLocalizedString("短休息", comment: "")
         case .longBreak:
-            return "长休息"
+            return NSLocalizedString("长休息", comment: "")
         }
     }
     

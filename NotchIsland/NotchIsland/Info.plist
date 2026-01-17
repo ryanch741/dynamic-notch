@@ -6,6 +6,8 @@
 	<string>灵动刘海需要访问音乐应用以显示和控制当前播放信息</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.productivity</string>
+	<key>CFBundleExecutable</key>
+	<string>NotchIsland</string>
 	<key>CFBundleName</key>
 	<string>灵动刘海</string>
 	<key>CFBundleDisplayName</key>
@@ -19,7 +21,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0.0</string>
 	<key>LSMinimumSystemVersion</key>
-	<string>26.2</string>
+	<string>14.0</string>
 	<key>LSUIElement</key>
 	<true/>
 </dict>

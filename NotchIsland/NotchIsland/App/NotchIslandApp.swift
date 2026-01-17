@@ -338,7 +338,7 @@ final class SettingsWindowController: NSWindowController {
         )
 
         window.center()
-        window.title = "设置"
+        window.title = NSLocalizedString("设置", comment: "")
         window.isReleasedWhenClosed = false
         window.contentView = hostingView
 
@@ -533,7 +533,7 @@ struct NotchBarView: View {
     private var weekdayString: String {
         let formatter = DateFormatter()
         formatter.dateFormat = "EEEE"
-        formatter.locale = Locale(identifier: "zh_CN")
+        formatter.locale = Locale.current
         return formatter.string(from: Date())
     }
     
@@ -600,7 +600,7 @@ struct NotchBarView: View {
                                         HStack(spacing: 6) {
                                             Image(systemName: module.icon)
                                                 .font(.system(size: 10))
-                                            Text(module.rawValue)
+                                            Text(LocalizedStringKey(module.rawValue))
                                                 .font(.system(size: 10, weight: .medium))
                                         }
                                         .foregroundStyle(
@@ -722,7 +722,7 @@ struct MainMenuView: View {
 
                 Divider()
 
-                Button(LocalizedStringKey("设置")) {
+                Button(LocalizedStringKey("打开设置")) {
                     NotificationCenter.default.post(name: .openSettings, object: nil)
                 }
 
@@ -772,19 +772,19 @@ struct SettingsView: View {
             
             Section(header: Text(LocalizedStringKey("显示设置"))) {
                 Toggle(LocalizedStringKey("在副屏显示刘海"), isOn: $showSecondaryScreenNotch)
-                    .help("开启后，外接显示器也会显示模拟刘海条")
+                    .help(LocalizedStringKey("在副屏显示刘海帮助"))
             }
             
-            Section(header: Text("关于")) {
+            Section(header: Text(LocalizedStringKey("关于"))) {
                 HStack {
-                    Text("开发者")
+                    Text(LocalizedStringKey("开发者"))
                     Spacer()
                     Text("hianzuo")
                         .foregroundColor(.secondary)
                 }
                 
                 HStack {
-                    Text("版权")
+                    Text(LocalizedStringKey("版权"))
                     Spacer()
                     Text("© 2026 Dynamic Notch")
                         .foregroundColor(.secondary)

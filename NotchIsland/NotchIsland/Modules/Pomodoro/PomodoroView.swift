@@ -14,7 +14,7 @@ struct PomodoroView: View {
         VStack(alignment: .leading, spacing: 8) {
             // 标题
             HStack {
-                Text("番茄钟")
+                Text(LocalizedStringKey("番茄钟"))
                     .font(.system(size: 13, weight: .medium))
                     .foregroundStyle(.white.opacity(0.8))
                 
@@ -69,9 +69,9 @@ struct PomodoroView: View {
                             }
                             .buttonStyle(.plain)
                             .foregroundStyle(.white.opacity(0.8))
-                            .help("开始专注")
+                            .help(LocalizedStringKey("开始专注"))
                             
-                            Text("开始")
+                            Text(LocalizedStringKey("开始"))
                                 .font(.caption)
                                 .foregroundStyle(.white.opacity(0.6))
                         }
@@ -86,9 +86,9 @@ struct PomodoroView: View {
                             }
                             .buttonStyle(.plain)
                             .foregroundStyle(.white.opacity(0.8))
-                            .help("继续")
+                            .help(LocalizedStringKey("继续"))
                             
-                            Text("继续")
+                            Text(LocalizedStringKey("继续"))
                                 .font(.caption)
                                 .foregroundStyle(.white.opacity(0.6))
                         }
@@ -103,9 +103,9 @@ struct PomodoroView: View {
                             }
                             .buttonStyle(.plain)
                             .foregroundStyle(.white.opacity(0.8))
-                            .help("暂停")
+                            .help(LocalizedStringKey("暂停"))
                             
-                            Text("暂停")
+                            Text(LocalizedStringKey("暂停"))
                                 .font(.caption)
                                 .foregroundStyle(.white.opacity(0.6))
                         }
@@ -122,9 +122,9 @@ struct PomodoroView: View {
                             }
                             .buttonStyle(.plain)
                             .foregroundStyle(.white.opacity(0.6))
-                            .help("跳过")
+                            .help(LocalizedStringKey("跳过"))
                             
-                            Text("跳过")
+                            Text(LocalizedStringKey("跳过"))
                                 .font(.caption)
                                 .foregroundStyle(.white.opacity(0.6))
                         }
@@ -141,9 +141,9 @@ struct PomodoroView: View {
                             }
                             .buttonStyle(.plain)
                             .foregroundStyle(.white.opacity(0.6))
-                            .help("停止")
+                            .help(LocalizedStringKey("停止"))
                             
-                            Text("停止")
+                            Text(LocalizedStringKey("停止"))
                                 .font(.caption)
                                 .foregroundStyle(.white.opacity(0.6))
                         }
@@ -156,7 +156,7 @@ struct PomodoroView: View {
             
             // 统计信息
             HStack {
-                Text("已完成 \(service.session.completedPomodoros) 个番茄钟")
+                Text(String(format: NSLocalizedString("已完成 %lld 个番茄钟", comment: ""), service.session.completedPomodoros))
                     .font(.caption)
                     .foregroundStyle(.white.opacity(0.5))
                 

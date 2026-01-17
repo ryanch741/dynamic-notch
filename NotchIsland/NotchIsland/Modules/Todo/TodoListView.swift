@@ -13,16 +13,16 @@ struct TodoListView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("待办事项")
+            Text(LocalizedStringKey("待办事项"))
                 .font(.headline)
 
             HStack {
-                TextField("新建待办…", text: $newTodoTitle)
+                TextField(LocalizedStringKey("新建待办…"), text: $newTodoTitle)
                     .textFieldStyle(.roundedBorder)
                     .onSubmit {
                         addTodo()
                     }
-                Button("添加") {
+                Button(LocalizedStringKey("添加")) {
                     addTodo()
                 }
                 .keyboardShortcut(.return, modifiers: [])
@@ -31,7 +31,7 @@ struct TodoListView: View {
             Divider()
 
             if todoStore.items.isEmpty {
-                Text("暂无待办事项")
+                Text(LocalizedStringKey("暂无待办事项"))
                     .foregroundStyle(.secondary)
                     .font(.subheadline)
                     .frame(maxWidth: .infinity, alignment: .center)

@@ -16,15 +16,15 @@ struct ShortcutEditorView: View {
     
     var body: some View {
         VStack(spacing: 20) {
-            Text("添加快捷方式")
+            Text(LocalizedStringKey("添加快捷方式"))
                 .font(.title2)
                 .fontWeight(.semibold)
             
             // 类型选择
-            Picker("类型", selection: $selectedType) {
-                Text("网站").tag(ShortcutType.website)
-                Text("应用程序").tag(ShortcutType.application)
-                Text("文件夹").tag(ShortcutType.folder)
+            Picker(LocalizedStringKey("类型"), selection: $selectedType) {
+                Text(LocalizedStringKey("网站")).tag(ShortcutType.website)
+                Text(LocalizedStringKey("应用程序")).tag(ShortcutType.application)
+                Text(LocalizedStringKey("文件夹")).tag(ShortcutType.folder)
             }
             .pickerStyle(.segmented)
             .onChange(of: selectedType) { _, _ in
@@ -37,7 +37,7 @@ struct ShortcutEditorView: View {
             if selectedType == .website {
                 VStack(alignment: .leading, spacing: 8) {
                     HStack {
-                        Text("网址")
+                        Text(LocalizedStringKey("网址"))
                             .font(.subheadline)
                             .foregroundStyle(.secondary)
                         
@@ -61,27 +61,27 @@ struct ShortcutEditorView: View {
             
             // 名称输入（第二个）
             VStack(alignment: .leading, spacing: 8) {
-                Text("名称")
+                Text(LocalizedStringKey("名称"))
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
                 
-                TextField("输入名称", text: $name)
+                TextField(LocalizedStringKey("名称"), text: $name)
                     .textFieldStyle(.roundedBorder)
             }
             
             // 应用/文件夹路径选择
             if selectedType != .website {
                 VStack(alignment: .leading, spacing: 8) {
-                    Text(targetLabel)
+                    Text(LocalizedStringKey(targetLabel))
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                     
                     HStack {
-                        TextField("选择路径", text: $target)
+                        TextField(LocalizedStringKey(targetLabel), text: $target)
                             .textFieldStyle(.roundedBorder)
                             .disabled(true)
                         
-                        Button("浏览...") {
+                        Button(LocalizedStringKey("浏览")) {
                             selectFile()
                         }
                         .buttonStyle(.borderedProminent)
@@ -93,12 +93,12 @@ struct ShortcutEditorView: View {
             
             // 操作按钮
             HStack(spacing: 12) {
-                Button("取消") {
+                Button(LocalizedStringKey("取消")) {
                     dismiss()
                 }
                 .keyboardShortcut(.cancelAction)
                 
-                Button("添加") {
+                Button(LocalizedStringKey("添加")) {
                     addShortcut()
                 }
                 .keyboardShortcut(.defaultAction)

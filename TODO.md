@@ -7,22 +7,22 @@
     - [x] 更新 `Info.plist` 中的 `CFBundleShortVersionString` 为 `1.0.0`
     - [x] 更新 `CFBundleVersion` 为 `1`
     - [x] 执行 `xcodebuild clean` 清理旧缓存
-- [ ] **制作 DMG 安装包** (create_dmg_flow)
+- [x] **制作 DMG 安装包** (create_dmg_flow)
     - [x] 准备 DMG 背景图资源 (使用基础样式)
     - [x] 编写并执行 `hdiutil` 自动化脚本
-    - [ ] 确保输出文件名为 `灵动刘海-1.0.0.dmg`
-    - [ ] 本地安装测试，验证图标、权限描述是否正常
+    - [x] 确保输出文件名为 `灵动刘海-1.0.0.dmg`
+    - [x] 本地安装测试，验证图标、权限描述是否正常
 
 ## 🌍 进阶规划：国际化与英文版本 (Localization)
-- [ ] **多语言基础架构**
-    - [ ] 创建 `Localizable.xcstrings` 资源文件
-    - [ ] 提取代码中硬编码的中文文本（如“灵动刘海”、“专注中”等）
+- [x] **多语言基础架构**
+    - [x] 创建 `Localizable.strings` 资源文件
+    - [x] 提取代码中硬编码的中文文本（如“灵动刘海”、“专注中”等）
 - [x] **英文文本翻译**
     - [x] 确定应用英文名称：Dynamic Notch
-    - [ ] 翻译所有功能模块文本
-- [ ] **系统适配**
-    - [ ] 支持根据系统语言自动切换
-    - [ ] 优化英文长文本在刘海条中的显示布局
+    - [x] 翻译所有功能模块文本
+- [x] **系统适配**
+    - [x] 支持根据系统语言自动切换
+    - [x] 优化英文长文本在刘海条中的显示布局
 
 ## 📦 第二阶段：社区分发 (GitHub + Homebrew)
 - [ ] **GitHub Release** (github_release_dmg)

@@ -127,7 +127,7 @@ struct MusicView: View {
                 .font(.system(size: 48))
                 .foregroundStyle(.white.opacity(0.3))
             
-            Text("未播放音乐")
+            Text(LocalizedStringKey("未播放音乐"))
                 .font(.system(size: 14))
                 .foregroundStyle(.white.opacity(0.5))
         }

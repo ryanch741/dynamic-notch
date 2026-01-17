@@ -96,7 +96,7 @@ extension MusicInfo {
     /// 显示信息（歌名 - 艺术家）
     var displayInfo: String {
         if title.isEmpty && artist.isEmpty {
-            return "未播放音乐"
+            return NSLocalizedString("未播放音乐", comment: "")
         }
         if artist.isEmpty {
             return title
@@ -117,11 +117,11 @@ extension MusicSource {
         case .spotify:
             return "Spotify"
         case .qqMusic:
-            return "QQ 音乐"
+            return NSLocalizedString("QQ 音乐", comment: "")
         case .netease:
-            return "网易云音乐"
+            return NSLocalizedString("网易云音乐", comment: "")
         case .unknown:
-            return "未知"
+            return NSLocalizedString("未知", comment: "")
         }
     }
     

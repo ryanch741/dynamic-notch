@@ -154,16 +154,16 @@ class PomodoroService: ObservableObject {
         switch phase {
         case .focus:
             let minutes = Int(config.focusDuration / 60)
-            title = "🎉 番茄钟完成！"
-            message = "您已经连续工作 \(minutes) 分钟，\n让眼睛休息一下吧 👀"
+            title = NSLocalizedString("番茄钟完成标题", comment: "")
+            message = String(format: NSLocalizedString("番茄钟完成信息", comment: ""), minutes)
         case .shortBreak:
             let minutes = Int(config.shortBreakDuration / 60)
-            title = "⏰ 休息结束"
-            message = "已休息 \(minutes) 分钟，\n准备好开始下一个番茄钟了吗？💪"
+            title = NSLocalizedString("短休息结束标题", comment: "")
+            message = String(format: NSLocalizedString("短休息结束信息", comment: ""), minutes)
         case .longBreak:
             let minutes = Int(config.longBreakDuration / 60)
-            title = "✨ 长休息结束"
-            message = "已休息 \(minutes) 分钟，\n精力充沛，继续加油！🔥"
+            title = NSLocalizedString("长休息结束标题", comment: "")
+            message = String(format: NSLocalizedString("长休息结束信息", comment: ""), minutes)
         case .idle:
             return
         }

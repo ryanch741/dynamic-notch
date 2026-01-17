@@ -17,7 +17,7 @@ struct ShortcutGridView: View {
         VStack(alignment: .leading, spacing: 12) {
             // 标题
             HStack {
-                Text("快捷方式")
+                Text(LocalizedStringKey("快捷方式"))
                     .font(.system(size: 13, weight: .medium))
                     .foregroundStyle(.white.opacity(0.8))
                 
@@ -38,7 +38,7 @@ struct ShortcutGridView: View {
                             .foregroundStyle(.white.opacity(0.6))
                     }
                     .buttonStyle(.plain)
-                    .help(editMode ? "完成" : "编辑")
+                    .help(editMode ? NSLocalizedString("完成", comment: "") : NSLocalizedString("编辑", comment: ""))
                 }
                 
                 // 添加按钮
@@ -50,7 +50,7 @@ struct ShortcutGridView: View {
                         .foregroundStyle(.white.opacity(0.6))
                 }
                 .buttonStyle(.plain)
-                .help("添加快捷方式")
+                .help(LocalizedStringKey("添加快捷方式"))
             }
             .padding(.horizontal, 16)
             
@@ -63,10 +63,10 @@ struct ShortcutGridView: View {
                         Image(systemName: "app.dashed")
                             .font(.system(size: 24))
                             .foregroundStyle(.white.opacity(0.3))
-                        Text("暂无快捷方式")
+                        Text(LocalizedStringKey("暂无快捷方式"))
                             .font(.caption)
                             .foregroundStyle(.white.opacity(0.4))
-                        Text("点击 + 添加")
+                        Text(LocalizedStringKey("点击 + 添加"))
                             .font(.caption2)
                             .foregroundStyle(.white.opacity(0.3))
                     }
