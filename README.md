@@ -1,5 +1,9 @@
 # Dynamic Notch (灵动刘海) 🎉
 
+<div align="right">
+  <a href="./README_EN.md">English Version</a> | 中文版
+</div>
+
 <div align="center">
 
 [![GitHub release](https://img.shields.io/github/v/release/ryanch741/dynamic-notch)](https://github.com/ryanch741/dynamic-notch/releases/latest)
