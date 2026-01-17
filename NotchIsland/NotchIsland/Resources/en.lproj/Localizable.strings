@@ -59,3 +59,6 @@
 "长休息结束信息" = "You've rested for %d minutes.\nKeep it up! 🔥";
 "完成" = "Done";
 "编辑" = "Edit";
+"启动设置" = "Startup Settings";
+"开机自启动" = "Launch at Startup";
+"开机自启动帮助" = "Automatically start the app when the system boots";

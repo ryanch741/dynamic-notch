@@ -9,6 +9,7 @@ import SwiftUI
 import AppKit
 import Combine
 import UserNotifications
+import ServiceManagement
 
 @main
 struct NotchIslandApp: App {
@@ -17,6 +18,7 @@ struct NotchIslandApp: App {
     var body: some Scene {
         Settings {
             SettingsView()
+                .environmentObject(launchAtStartupManager)
         }
     }
 }
@@ -25,6 +27,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCent
     private var statusBarController: StatusBarController?
     private var settingsWindowController: SettingsWindowController?
     let todoStore = TodoStore()
+    let launchAtStartupManager = LaunchAtStartupManager()
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         // 设置通知代理
@@ -742,6 +745,7 @@ struct MainMenuView: View {
 
 struct SettingsView: View {
     @AppStorage("showSecondaryScreenNotch") private var showSecondaryScreenNotch = true
+    @EnvironmentObject var launchAtStartupManager: LaunchAtStartupManager
     
     var body: some View {
         Form {
@@ -773,6 +777,18 @@ struct SettingsView: View {
             Section(header: Text(LocalizedStringKey("显示设置"))) {
                 Toggle(LocalizedStringKey("在副屏显示刘海"), isOn: $showSecondaryScreenNotch)
                     .help(LocalizedStringKey("在副屏显示刘海帮助"))
+            }
+            
+            Section(header: Text(LocalizedStringKey("启动设置"))) {
+                Toggle(LocalizedStringKey("开机自启动"), isOn: Binding(
+                    get: { launchAtStartupManager.isEnabled },
+                    set: { newValue in
+                        Task {
+                            await launchAtStartupManager.setLaunchAtStartup(newValue)
+                        }
+                    }
+                ))
+                .help(LocalizedStringKey("开机自启动帮助"))
             }
             
             Section(header: Text(LocalizedStringKey("关于"))) {

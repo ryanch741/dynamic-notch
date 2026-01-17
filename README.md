@@ -53,6 +53,10 @@
 - Optional simulated notch bar on secondary displays
 - Perfect multi-monitor workflow support
 
+### ⚡ Auto-startup
+- Automatically runs when the system starts
+- Toggle in-app via Settings
+
 ### 🌍 Internationalization Support
 - Automatic switching between Chinese and English based on system language
 - Full bilingual support
