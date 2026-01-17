@@ -1,7 +1,7 @@
-# Dynamic Notch (灵动刘海) 🎉
+# Dynamic Notch 🎉
 
 <div align="right">
-  <a href="./README_EN.md">English Version</a> | 中文版
+  <a href="./README_ZH.md">中文版</a> | English Version
 </div>
 
 <div align="center">
@@ -11,135 +11,135 @@
 [![License](https://img.shields.io/github/license/ryanch741/dynamic-notch)](LICENSE)
 [![macOS](https://img.shields.io/badge/macOS-14.0+-black?logo=apple)](https://www.apple.com/macos/)
 
-**✨ 专为 macOS 刘海屏设计的效率增强工具**
+**✨ A macOS utility designed for Dynamic Island-style interaction on notch-equipped MacBook Pros**
 
-🖱️ 鼠标靠近自动展开 | ⏰ 时间日期 | 🚀 快捷方式 | 🍅 番茄钟 | 🎵 音乐控制 | ✅ 待办事项
+🖱️ Auto-expand on hover | ⏰ Time & Date | 🚀 Shortcuts | 🍅 Pomodoro Timer | 🎵 Music Control | ✅ To-do List
 
 </div>
 
-## 🌟 核心特性
+## 🌟 Core Features
 
-### 🖱️ 动态刘海交互
-- **智能展开**：鼠标靠近时自动展开，平滑的缩放动画
-- **智能隐藏**：不干扰日常使用，保持界面整洁
+### 🖱️ Dynamic Notch Interaction
+- **Smart Expansion**: Automatically expands when mouse approaches with smooth scaling animations
+- **Intelligent Hiding**: Doesn't interfere with daily usage, keeping the interface clean
 
-### 📦 效率模块集成
+### 📦 Integrated Efficiency Modules
 
-**⏰ 时间日期**
-- 实时显示精确时间与星期
-- 支持多语言日期格式
+**⏰ Time & Date**
+- Real-time display of accurate time and day of week
+- Multi-language date format support
 
-**🚀 快捷方式**
-- 一键开启常用应用、网站和文件夹
-- 支持自定义快捷方式图标
-- 网站自动抓取 Favicon
+**🚀 Shortcuts**
+- One-click access to common apps, websites, and folders
+- Customizable shortcut icons
+- Automatic Favicon fetching for websites
 
-**🍅 番茄钟**
-- 专注力管理，25分钟工作 + 5分钟休息
-- 系统级通知提醒
-- 支持自定义时长和循环次数
+**🍅 Pomodoro Timer**
+- Focus management with 25-minute work + 5-minute break cycles
+- System-level notification reminders
+- Customizable duration and loop counts
 
-**🎵 音乐控制**
-- 实时显示 Apple Music / Spotify / 网易云音乐 / QQ音乐 播放信息
-- 支持切歌、播放/暂停控制
-- 精美的专辑封面展示
+**🎵 Music Control**
+- Real-time playback info from Apple Music / Spotify / NetEase Cloud Music / QQ Music
+- Skip tracks, play/pause controls
+- Beautiful album art display
 
-**✅ 待办事项**
-- 便捷的 Todo 列表管理
-- 集成在菜单栏，随时访问
-- 本地持久化存储
+**✅ To-do List**
+- Convenient task management
+- Integrated in menu bar for easy access
+- Local data persistence
 
-### 🖥️ 多显示器支持
-- 可选在副屏上显示模拟刘海条
-- 完美支持多显示器工作流
+### 🖥️ Multi-display Support
+- Optional simulated notch bar on secondary displays
+- Perfect multi-monitor workflow support
 
-### 🌍 国际化支持
-- 根据系统语言自动切换中英文界面
-- 完整的双语支持
+### 🌍 Internationalization Support
+- Automatic switching between Chinese and English based on system language
+- Full bilingual support
 
-## 📦 安装
+## 📦 Installation
 
-### 方式一：下载 DMG 安装包（推荐）
+### Method 1: Download DMG Package (Recommended)
 
 [⬇️ Download Dynamic Notch v1.0.0](https://github.com/ryanch741/dynamic-notch/releases/download/v1.0.0/灵动刘海-1.0.0.dmg)
 
-### 方式二：Homebrew（即将支持）
+### Method 2: Homebrew (Coming Soon)
 
 ```bash
-brew install dynamic-notch  # 即将上线
+brew install dynamic-notch  # Coming Soon
 ```
 
-### 方式三：源码编译
+### Method 3: Build from Source
 
 ```bash
 git clone https://github.com/ryanch741/dynamic-notch.git
 cd dynamic-notch
 open NotchIsland.xcodeproj
-# 在 Xcode 中编译运行
+# Build and run in Xcode
 ```
 
-## 🖼️ 功能预览
+## 🖼️ Feature Preview
 
-| 功能模块 | 预览效果 |
-|---------|----------|
-| **时间日期** | 鼠标悬停时显示详细时间 |
-| **快捷方式** | 一键启动常用应用/网站 |
-| **番茄钟** | 专注计时，系统通知提醒 |
-| **音乐控制** | 实时显示播放信息，支持控制 |
-| **待办事项** | 随时记录和管理任务 |
+| Feature Module | Preview |
+|---------------|---------|
+| **Time & Date** | Detailed time display on hover |
+| **Shortcuts** | Quick launch for apps/websites |
+| **Pomodoro Timer** | Focus timer with system notifications |
+| **Music Control** | Real-time playback info with controls |
+| **To-do List** | Manage tasks anytime, anywhere |
 
-## 💻 系统要求
+## 💻 System Requirements
 
-- **操作系统**: macOS 14.0 (Sonoma) 或更高版本
-- **推荐设备**: 带有刘海的 MacBook Pro
-- **必需权限**: 
-  - 辅助功能权限（用于鼠标位置监听）
-  - 通知权限（用于番茄钟提醒）
+- **Operating System**: macOS 14.0 (Sonoma) or higher
+- **Recommended Device**: MacBook Pro with notch
+- **Required Permissions**:
+  - Accessibility permission (for mouse position monitoring)
+  - Notification permission (for Pomodoro timer alerts)
 
-## ⚙️ 配置与使用
+## ⚙️ Configuration & Usage
 
-1. 首次启动请在"系统设置 → 隐私与安全性"中允许"辅助功能"权限
-2. 应用会在菜单栏显示设置入口
-3. 可在设置中启用/禁用各功能模块
+1. On first launch, allow "Accessibility" permission in "System Settings → Privacy & Security"
+2. The app displays a settings entry in the menu bar
+3. Enable/disable various modules in settings
 
-## 🛠️ 故障排除
+## 🛠️ Troubleshooting
 
-### 遇到"应用损坏"提示
+### "Application is damaged" Error
 
-如果打开应用时提示"应用已损坏或不完整"，请在终端执行：
+If you encounter a "application may be damaged or incomplete" error when opening the app, run this command in Terminal:
 
 ```bash
 sudo xattr -rd com.apple.quarantine /Applications/灵动刘海.app
 ```
 
-然后重新启动应用。
+Then restart the application.
 
-### 无法监听鼠标位置
+### Mouse Position Monitoring Not Working
 
-请确保已在"系统设置 → 隐私与安全性 → 辅助功能"中勾选"灵动刘海"。
+Ensure "Dynamic Notch" is checked in "System Settings → Privacy & Security → Accessibility".
 
-### 番茄钟通知不显示
+### Pomodoro Notifications Not Showing
 
-请确保已在"系统设置 → 通知"中允许"灵动刘海"发送通知。
+Ensure "Dynamic Notch" is allowed to send notifications in "System Settings → Notifications".
 
-## 🤝 贡献
+## 🤝 Contributing
 
-欢迎提交 Issue 和 Pull Request 来改进这个项目！
+Feel free to submit Issues and Pull Requests to improve this project!
 
-## 📄 许可证
+## 📄 License
 
-本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 📞 支持
+## 📞 Support
 
-- **问题反馈**: [Issues](https://github.com/ryanch741/dynamic-notch/issues)
-- **项目主页**: [Gitee](https://gitee.com/hianzuo/dynamic-notch)
+- **Issue Reporting**: [Issues](https://github.com/ryanch741/dynamic-notch/issues)
+- **Project Homepage**: [Gitee](https://gitee.com/hianzuo/dynamic-notch)
 
 ---
 
 <div align="center">
 
-**感谢支持独立开发！** 🚀  
-如果你觉得好用，请给我们一个 ⭐️ Star！
+**Thanks for supporting indie development!** 🚀  
+If you find this useful, please give us a ⭐️ Star!
 
 </div>
