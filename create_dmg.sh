@@ -6,7 +6,7 @@ PROJECT_DIR="$SCRIPT_DIR/NotchIsland"
 APP_NAME="灵动刘海"
 DERIVED_DATA_PATH="$PROJECT_DIR/build"
 APP_PATH="$DERIVED_DATA_PATH/Build/Products/Release/NotchIsland.app"
-DMG_NAME="灵动刘海-1.0.1.dmg"
+DMG_NAME="dynamic-notch-1.0.1.dmg"
 STAGING_DIR="dmg_staging"
 
 echo "🚀 开始构建并制作 DMG 安装包..."
