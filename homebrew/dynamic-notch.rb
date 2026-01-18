@@ -1,14 +1,17 @@
 cask "dynamic-notch" do
-  version "1.0.0"
-  homepage "https://github.com/ryanch741/dynamic-notch"
-  url "https://github.com/ryanch741/dynamic-notch/releases/download/v#{version}/灵动刘海-#{version}.dmg"
-  sha256 "ff49f816c88a74ab5ca688630289534a7f8dc0f21187e00c055949582827aae0"
+  version "1.0.1"
+  sha256 "795c33f8194052c874b7d3ca18a66bafaa551fa454a5e16ef584a53dfdcbec4e"
+
+  url "https://github.com/ryanch741/dynamic-notch/releases/download/v#{version}/dynamic-notch-#{version}.dmg"
   name "Dynamic Notch"
+  name "灵动刘海"
   desc "A macOS utility for Dynamic Island-style interaction on MacBook Pro with notch"
 
   depends_on macos: ">= :sonoma"
 
   app "灵动刘海.app"
+
+  homepage "https://github.com/ryanch741/dynamic-notch"
 
   zap trash: [
     "~/Library/Application Support/com.hianzuo.NotchIsland",
