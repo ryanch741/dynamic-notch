@@ -1,12 +1,24 @@
 #!/bin/bash
 
 # 配置变量
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+PROJECT_DIR="$SCRIPT_DIR/NotchIsland"
 APP_NAME="灵动刘海"
-APP_PATH="/Users/ryan/Learn/BarHold/NotchIsland/build/Build/Products/Release/NotchIsland.app"
-DMG_NAME="灵动刘海-1.0.0.dmg"
+DERIVED_DATA_PATH="$PROJECT_DIR/build"
+APP_PATH="$DERIVED_DATA_PATH/Build/Products/Release/NotchIsland.app"
+DMG_NAME="灵动刘海-1.0.1.dmg"
 STAGING_DIR="dmg_staging"
 
-echo "🚀 开始制作 DMG 安装包..."
+echo "🚀 开始构建并制作 DMG 安装包..."
+
+# 0. 构建 Release 版本应用
+xcodebuild -project "$PROJECT_DIR/NotchIsland.xcodeproj" -scheme NotchIsland -configuration Release -derivedDataPath "$DERIVED_DATA_PATH"
+
+if [ ! -d "$APP_PATH" ]; then
+  echo "❌ 未找到构建好的应用: $APP_PATH"
+  echo "请先确认 Xcode 构建成功（Release 配置）。"
+  exit 1
+fi
 
 # 1. 创建暂存目录
 rm -rf "$STAGING_DIR"

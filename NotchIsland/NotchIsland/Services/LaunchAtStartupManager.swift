@@ -7,38 +7,36 @@
 
 import Foundation
 import ServiceManagement
+import Combine
 
 class LaunchAtStartupManager: ObservableObject {
     
     @Published var isEnabled: Bool = false
     
+    private let service = SMAppService.mainApp
+    
     init() {
         updateStatus()
     }
     
-    private func updateStatus() {
-        isEnabled = SMAppService.mainAppCurrentProcessIsEnabled()
+    func updateStatus() {
+        isEnabled = service.status == .enabled
     }
     
-    func setLaunchAtStartup(_ enabled: Bool) async throws {
+    func setLaunchAtStartup(_ enabled: Bool) {
         do {
             if enabled {
-                try SMAppService.registerAppAsLoginItem()
+                try service.register()
             } else {
-                try SMAppService.unregisterAppAsLoginItem()
+                try service.unregister()
             }
             updateStatus()
         } catch {
             print("Failed to update launch at startup setting: \(error)")
-            throw error
         }
     }
     
-    func toggleLaunchAtStartup() async {
-        do {
-            try await setLaunchAtStartup(!isEnabled)
-        } catch {
-            print("Failed to toggle launch at startup: \(error)")
-        }
+    func toggleLaunchAtStartup() {
+        setLaunchAtStartup(!isEnabled)
     }
 }

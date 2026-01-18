@@ -91,6 +91,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 945E4E612F13D0B000610A7F;
 			minimizedProjectReferenceProxies = 1;
@@ -250,7 +251,8 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = NotchIsland/Info.plist;
+				INFOPLIST_FILE = Info.plist;
+				CODE_SIGN_ENTITLEMENTS = NotchIsland.entitlements;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -293,7 +295,8 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = NotchIsland/Info.plist;
+				INFOPLIST_FILE = Info.plist;
+				CODE_SIGN_ENTITLEMENTS = NotchIsland.entitlements;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

@@ -18,7 +18,7 @@ struct NotchIslandApp: App {
     var body: some Scene {
         Settings {
             SettingsView()
-                .environmentObject(launchAtStartupManager)
+                .environmentObject(appDelegate.launchAtStartupManager)
         }
     }
 }
@@ -59,7 +59,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCent
 
     @objc private func showSettingsWindow() {
         if settingsWindowController == nil {
-            settingsWindowController = SettingsWindowController()
+            settingsWindowController = SettingsWindowController(launchAtStartupManager: launchAtStartupManager)
         }
         settingsWindowController?.show()
     }
@@ -329,8 +329,9 @@ final class NotchBarWindowController: NSWindowController, NSWindowDelegate {
 }
 
 final class SettingsWindowController: NSWindowController {
-    convenience init() {
+    convenience init(launchAtStartupManager: LaunchAtStartupManager) {
         let rootView = SettingsView()
+            .environmentObject(launchAtStartupManager)
         let hostingView = NSHostingView(rootView: rootView)
 
         let window = NSWindow(
@@ -783,9 +784,7 @@ struct SettingsView: View {
                 Toggle(LocalizedStringKey("开机自启动"), isOn: Binding(
                     get: { launchAtStartupManager.isEnabled },
                     set: { newValue in
-                        Task {
-                            await launchAtStartupManager.setLaunchAtStartup(newValue)
-                        }
+                        launchAtStartupManager.setLaunchAtStartup(newValue)
                     }
                 ))
                 .help(LocalizedStringKey("开机自启动帮助"))
