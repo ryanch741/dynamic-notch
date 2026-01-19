@@ -186,7 +186,7 @@ final class NotchBarWindowController: NSWindowController, NSWindowDelegate {
         window.isOpaque = false
         window.backgroundColor = .clear
         window.hasShadow = false
-        window.ignoresMouseEvents = false
+        window.ignoresMouseEvents = true  // 初始状态：收起时忽略鼠标事件，避免阻挡点击
         window.collectionBehavior = [.canJoinAllSpaces, .fullScreenAuxiliary, .stationary, .ignoresCycle]
         window.contentView = notchBarContainerView
         window.titlebarAppearsTransparent = true
@@ -321,6 +321,16 @@ final class NotchBarWindowController: NSWindowController, NSWindowDelegate {
                 display: true
             )
         })
+        
+        // 关键修复：收起时让窗口忽略大部分鼠标事件，只保留实际内容区域可交互
+        // 通过设置 ignoresMouseEvents，收起状态下窗口不会阻挡下方的点击
+        if !isExpanded {
+            // 收起状态：窗口忽略鼠标事件，让点击穿透到下方
+            window.ignoresMouseEvents = true
+        } else {
+            // 展开状态：窗口接收鼠标事件
+            window.ignoresMouseEvents = false
+        }
     }
     
     func show() {
