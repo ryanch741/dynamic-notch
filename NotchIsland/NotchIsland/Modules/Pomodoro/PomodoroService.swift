@@ -24,6 +24,10 @@ class PomodoroService: ObservableObject {
         self.session = PomodoroSession()
         self.config = PomodoroConfig()
         loadConfig()
+        
+        // 初始化时根据配置设置初始剩余时间
+        self.session.remainingTime = config.focusDuration
+        self.session.totalTime = config.focusDuration
     }
     
     // MARK: - 计时控制
@@ -168,8 +172,21 @@ class PomodoroService: ObservableObject {
             return
         }
         
-        // 发送应用内通知（显示在刘海容器中）
+        // 1. 发送应用内通知（显示在刘海容器中）
         NotificationManager.shared.show(title: title, message: message)
+        
+        // 2. 发送系统通知
+        let content = UNMutableNotificationContent()
+        content.title = title
+        content.body = message
+        content.sound = .default
+        
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: nil)
+        UNUserNotificationCenter.current().add(request) { error in
+            if let error = error {
+                print("[Pomodoro] ❌ 发送系统通知失败: \(error)")
+            }
+        }
     }
     
     // MARK: - 配置管理
@@ -178,6 +195,12 @@ class PomodoroService: ObservableObject {
     func updateConfig(_ newConfig: PomodoroConfig) {
         config = newConfig
         saveConfig()
+        
+        // 如果当前是空闲状态，立即更新显示的时间
+        if session.phase == .idle {
+            session.remainingTime = config.focusDuration
+            session.totalTime = config.focusDuration
+        }
     }
     
     /// 加载配置

@@ -62,3 +62,13 @@
 "启动设置" = "Startup Settings";
 "开机自启动" = "Launch at Startup";
 "开机自启动帮助" = "Automatically start the app when the system boots";
+
+"番茄钟设置" = "Pomodoro Settings";
+"专注时长" = "Focus Duration";
+"短休息时长" = "Short Break Duration";
+"长休息时长" = "Long Break Duration";
+"长休息间隔" = "Long Break Interval";
+"自动开始休息" = "Auto-start Breaks";
+"自动开始下一个番茄钟" = "Auto-start Next Pomodoro";
+"分钟" = "min";
+"个番茄钟" = "Pomodoros";

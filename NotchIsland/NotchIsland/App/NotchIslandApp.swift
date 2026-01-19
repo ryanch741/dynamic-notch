@@ -757,9 +757,11 @@ struct MainMenuView: View {
 struct SettingsView: View {
     @AppStorage("showSecondaryScreenNotch") private var showSecondaryScreenNotch = true
     @EnvironmentObject var launchAtStartupManager: LaunchAtStartupManager
+    @ObservedObject var pomodoroService = PomodoroService.shared
     
     var body: some View {
         Form {
+            // ... 第一部分保持不变 ...
             Section {
                 VStack(alignment: .leading, spacing: 8) {
                     HStack(spacing: 12) {
@@ -772,7 +774,7 @@ struct SettingsView: View {
                             Text(LocalizedStringKey("灵动刘海"))
                                 .font(.title2)
                                 .fontWeight(.bold)
-                            Text("Version 1.0.0")
+                            Text("Version \(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0.0") (\(Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "1"))")
                                 .font(.caption)
                                 .foregroundColor(.secondary)
                         }
@@ -788,6 +790,96 @@ struct SettingsView: View {
             Section(header: Text(LocalizedStringKey("显示设置"))) {
                 Toggle(LocalizedStringKey("在副屏显示刘海"), isOn: $showSecondaryScreenNotch)
                     .help(LocalizedStringKey("在副屏显示刘海帮助"))
+            }
+            
+            Section(header: Text(LocalizedStringKey("番茄钟设置"))) {
+                // 专注时长
+                Stepper(value: Binding(
+                    get: { Int(pomodoroService.config.focusDuration / 60) },
+                    set: { newValue in
+                        var newConfig = pomodoroService.config
+                        newConfig.focusDuration = TimeInterval(newValue * 60)
+                        pomodoroService.updateConfig(newConfig)
+                    }
+                ), in: 1...120) {
+                    HStack {
+                        Text(LocalizedStringKey("专注时长"))
+                        Spacer()
+                        Text("\(Int(pomodoroService.config.focusDuration / 60)) \(NSLocalizedString("分钟", comment: ""))")
+                            .foregroundColor(.secondary)
+                    }
+                }
+                
+                // 短休息时长
+                Stepper(value: Binding(
+                    get: { Int(pomodoroService.config.shortBreakDuration / 60) },
+                    set: { newValue in
+                        var newConfig = pomodoroService.config
+                        newConfig.shortBreakDuration = TimeInterval(newValue * 60)
+                        pomodoroService.updateConfig(newConfig)
+                    }
+                ), in: 1...30) {
+                    HStack {
+                        Text(LocalizedStringKey("短休息时长"))
+                        Spacer()
+                        Text("\(Int(pomodoroService.config.shortBreakDuration / 60)) \(NSLocalizedString("分钟", comment: ""))")
+                            .foregroundColor(.secondary)
+                    }
+                }
+                
+                // 长休息时长
+                Stepper(value: Binding(
+                    get: { Int(pomodoroService.config.longBreakDuration / 60) },
+                    set: { newValue in
+                        var newConfig = pomodoroService.config
+                        newConfig.longBreakDuration = TimeInterval(newValue * 60)
+                        pomodoroService.updateConfig(newConfig)
+                    }
+                ), in: 1...60) {
+                    HStack {
+                        Text(LocalizedStringKey("长休息时长"))
+                        Spacer()
+                        Text("\(Int(pomodoroService.config.longBreakDuration / 60)) \(NSLocalizedString("分钟", comment: ""))")
+                            .foregroundColor(.secondary)
+                    }
+                }
+                
+                // 长休息间隔
+                Stepper(value: Binding(
+                    get: { pomodoroService.config.longBreakInterval },
+                    set: { newValue in
+                        var newConfig = pomodoroService.config
+                        newConfig.longBreakInterval = newValue
+                        pomodoroService.updateConfig(newConfig)
+                    }
+                ), in: 1...10) {
+                    HStack {
+                        Text(LocalizedStringKey("长休息间隔"))
+                        Spacer()
+                        Text("\(pomodoroService.config.longBreakInterval) \(NSLocalizedString("个番茄钟", comment: ""))")
+                            .foregroundColor(.secondary)
+                    }
+                }
+                
+                Divider()
+                
+                Toggle(LocalizedStringKey("自动开始休息"), isOn: Binding(
+                    get: { pomodoroService.config.autoStartBreaks },
+                    set: { newValue in
+                        var newConfig = pomodoroService.config
+                        newConfig.autoStartBreaks = newValue
+                        pomodoroService.updateConfig(newConfig)
+                    }
+                ))
+                
+                Toggle(LocalizedStringKey("自动开始下一个番茄钟"), isOn: Binding(
+                    get: { pomodoroService.config.autoStartPomodoros },
+                    set: { newValue in
+                        var newConfig = pomodoroService.config
+                        newConfig.autoStartPomodoros = newValue
+                        pomodoroService.updateConfig(newConfig)
+                    }
+                ))
             }
             
             Section(header: Text(LocalizedStringKey("启动设置"))) {
