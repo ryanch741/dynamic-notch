@@ -65,7 +65,14 @@
 
 ### Method 1: Download DMG Package (Recommended)
 
-[⬇️ Download Dynamic Notch v1.0.0](https://github.com/ryanch741/dynamic-notch/releases/download/v1.0.0/灵动刘海-1.0.0.dmg)
+[⬇️ Download Dynamic Notch v1.0.2](https://github.com/ryanch741/dynamic-notch/releases/download/v1.0.2/dynamic-notch-1.0.2.dmg)
+
+> **⚠️ Security Note**: Since this app is not notarized by Apple, you might see a warning: *"Apple cannot verify that this app is free from malware"*. 
+> 
+> **To open the app for the first time:**
+> 1. **Right-click** (or Control-click) `灵动刘海.app` in your Applications folder.
+> 2. Select **Open** from the menu.
+> 3. Click **Open** in the dialog box.
 
 ### Method 2: Homebrew (Coming Soon)
 
@@ -108,9 +115,16 @@ open NotchIsland.xcodeproj
 
 ## 🛠️ Troubleshooting
 
-### "Application is damaged" Error
+### "Application is damaged" or "Cannot be verified" Error
 
-If you encounter a "application may be damaged or incomplete" error when opening the app, run this command in Terminal:
+If you encounter an error saying the application is damaged, incomplete, or cannot be verified by Apple, this is due to macOS Gatekeeper. You can fix it using one of these methods:
+
+#### Option A: The Simple Way (Recommended)
+1. In Finder, **Right-click** the app and select **Open**.
+2. Click **Open Anyway** in the popup.
+
+#### Option B: Using Terminal
+Run this command to remove the quarantine flag:
 
 ```bash
 sudo xattr -rd com.apple.quarantine /Applications/灵动刘海.app

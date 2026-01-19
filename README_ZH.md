@@ -65,7 +65,14 @@
 
 ### 方式一：下载 DMG 安装包（推荐）
 
-[⬇️ Download Dynamic Notch v1.0.0](https://github.com/ryanch741/dynamic-notch/releases/download/v1.0.0/灵动刘海-1.0.0.dmg)
+[⬇️ 下载 灵动刘海 v1.0.2](https://github.com/ryanch741/dynamic-notch/releases/download/v1.0.2/dynamic-notch-1.0.2.dmg)
+
+> **⚠️ 安全提示**：由于应用未经过 Apple 官方公证，首次打开可能会提示 *“Apple 无法验证是否包含恶意软件”*。
+> 
+> **首次打开方法：**
+> 1. 在应用程序文件夹中，**右键点击**（或按住 Control 键点击）“灵动刘海.app”。
+> 2. 在弹出菜单中选择 **“打开”**。
+> 3. 在随后出现的对话框中点击 **“打开”** 即可。
 
 ### 方式二：Homebrew（即将支持）
 
@@ -108,9 +115,16 @@ open NotchIsland.xcodeproj
 
 ## 🛠️ 故障排除
 
-### 遇到"应用损坏"提示
+### 遇到“应用损坏”或“无法验证”提示
 
-如果打开应用时提示"应用已损坏或不完整"，请在终端执行：
+如果打开应用时提示“应用已损坏”、“无法验证开发者”或“无法验证是否包含恶意软件”，这是 macOS Gatekeeper 的安全拦截。请尝试以下任一方法：
+
+#### 方法 A：快捷右键打开（推荐）
+1. 在访达中**右键点击**应用，选择“打开”。
+2. 在弹出的对话框中点击“仍要打开”。
+
+#### 方法 B：使用终端命令
+在终端执行以下命令手动移除隔离属性：
 
 ```bash
 sudo xattr -rd com.apple.quarantine /Applications/灵动刘海.app
