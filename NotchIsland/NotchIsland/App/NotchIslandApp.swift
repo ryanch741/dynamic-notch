@@ -28,6 +28,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCent
     private var settingsWindowController: SettingsWindowController?
     let todoStore = TodoStore()
     let launchAtStartupManager = LaunchAtStartupManager()
+    var isQuitting = false
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         // 设置通知代理
@@ -62,6 +63,14 @@ final class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCent
             settingsWindowController = SettingsWindowController(launchAtStartupManager: launchAtStartupManager)
         }
         settingsWindowController?.show()
+    }
+
+    func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
+        if isQuitting {
+            return .terminateNow
+        }
+        // 屏蔽 Cmd+Q 退出，只有通过菜单点击退出才允许
+        return .terminateCancel
     }
 }
 
@@ -157,6 +166,17 @@ final class StatusBarController {
     }
 }
 
+// 自定义刘海窗口，防止成为 Key Window，从而避免 Cmd+Q 等快捷键退出程序
+class NotchBarWindow: NSWindow {
+    override var canBecomeKey: Bool {
+        return false
+    }
+    
+    override var canBecomeMain: Bool {
+        return false
+    }
+}
+
 final class NotchBarWindowController: NSWindowController, NSWindowDelegate {
     private var trackingArea: NSTrackingArea?
     private var viewModel: NotchBarViewModel!
@@ -175,7 +195,7 @@ final class NotchBarWindowController: NSWindowController, NSWindowDelegate {
         let viewModel = NotchBarViewModel()
         let notchBarContainerView = NotchBarContainerView(viewModel: viewModel)
         
-        let window = NSWindow(
+        let window = NotchBarWindow(
             contentRect: NSRect(origin: .zero, size: NSSize(width: 700, height: 250)),
             styleMask: [.borderless, .fullSizeContentView],
             backing: .buffered,
@@ -741,6 +761,9 @@ struct MainMenuView: View {
                 }
 
                 Button(LocalizedStringKey("退出")) {
+                    if let delegate = NSApp.delegate as? AppDelegate {
+                        delegate.isQuitting = true
+                    }
                     NSApp.terminate(nil)
                 }
             }
