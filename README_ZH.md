@@ -77,7 +77,17 @@
 ### 方式二：Homebrew（即将支持）
 
 ```bash
-brew install dynamic-notch  # 即将上线
+```bash
+# 通过 Homebrew Tap 安装
+brew install --cask ryanch741/tap/dynamic-notch
+```
+
+或先添加 Tap 再安装：
+
+```bash
+brew tap ryanch741/tap
+brew install --cask dynamic-notch
+```
 ```
 
 ### 方式三：源码编译

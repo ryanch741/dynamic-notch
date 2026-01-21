@@ -77,7 +77,17 @@
 ### Method 2: Homebrew (Coming Soon)
 
 ```bash
-brew install dynamic-notch  # Coming Soon
+```bash
+# Install via Homebrew Tap
+brew install --cask ryanch741/tap/dynamic-notch
+```
+
+Or tap first, then install:
+
+```bash
+brew tap ryanch741/tap
+brew install --cask dynamic-notch
+```
 ```
 
 ### Method 3: Build from Source
@@ -120,6 +130,15 @@ open NotchIsland.xcodeproj
 If you encounter an error saying the application is damaged, incomplete, or cannot be verified by Apple, this is due to macOS Gatekeeper. You can fix it using one of these methods:
 
 #### Option A: The Simple Way (Recommended)
+1. In Finder, **Right-click** the app and select **Open**.
+2. Click **Open Anyway** in the popup.
+
+#### Option B: Privacy Settings
+1. Open **System Settings** → **Privacy #### Option A: The Simple Way (Recommended) Security**.
+2. Scroll down and look for a message about "Dynamic Notch" in the bottom section.
+3. Click **Allow Anyway** or **Open Anyway**.
+
+#### Option C: Using Terminal
 1. In Finder, **Right-click** the app and select **Open**.
 2. Click **Open Anyway** in the popup.
 
