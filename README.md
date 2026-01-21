@@ -65,7 +65,7 @@
 
 ### Method 1: Download DMG Package (Recommended)
 
-[⬇️ Download Dynamic Notch v1.0.2](https://github.com/ryanch741/dynamic-notch/releases/download/v1.0.2/dynamic-notch-1.0.2.dmg)
+[⬇️ Download Dynamic Notch v1.0.2](https://github.com/ryanch741/dynamic-notch/releases/download/v1.0.5/dynamic-notch-1.0.5.dmg)
 
 > **⚠️ Security Note**: Since this app is not notarized by Apple, you might see a warning: *"Apple cannot verify that this app is free from malware"*. 
 > 
