@@ -24,6 +24,8 @@ struct NotchIslandApp: App {
 }
 
 final class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDelegate {
+    static private(set) var shared: AppDelegate?
+    
     private var statusBarController: StatusBarController?
     private var settingsWindowController: SettingsWindowController?
     let todoStore = TodoStore()
@@ -31,6 +33,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCent
     var isQuitting = false
 
     func applicationDidFinishLaunching(_ notification: Notification) {
+        AppDelegate.shared = self
         // 设置通知代理
         UNUserNotificationCenter.current().delegate = self
         
@@ -761,9 +764,7 @@ struct MainMenuView: View {
                 }
 
                 Button(LocalizedStringKey("退出")) {
-                    if let delegate = NSApp.delegate as? AppDelegate {
-                        delegate.isQuitting = true
-                    }
+                    AppDelegate.shared?.isQuitting = true
                     NSApp.terminate(nil)
                 }
             }
