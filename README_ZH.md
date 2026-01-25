@@ -101,13 +101,32 @@ open NotchIsland.xcodeproj
 
 ## 🖼️ 功能预览
 
-| 功能模块 | 预览效果 |
-|---------|----------|
-| **时间日期** | 鼠标悬停时显示详细时间 |
-| **快捷方式** | 一键启动常用应用/网站 |
-| **番茄钟** | 专注计时，系统通知提醒 |
-| **音乐控制** | 实时显示播放信息，支持控制 |
-| **待办事项** | 随时记录和管理任务 |
+### 动态刘海交互
+
+<div align="center">
+
+| 收起状态 | 展开状态 |
+|:-------:|:-------:|
+| ![刘海收起](screenshots/notch-collapsed.png) | ![刘海展开](screenshots/notch-expanded.png) |
+| *默认收起的刘海条状态* | *展开后显示功能模块选项* |
+
+</div>
+
+### 功能模块展示
+
+<div align="center">
+
+| 时间日期 | 快捷方式 | 番茄钟 |
+|:-------:|:-------:|:------:|
+| ![时间模块](screenshots/feature-time.png) | ![快捷方式模块](screenshots/feature-shortcuts.png) | ![番茄钟模块](screenshots/feature-pomodoro.png) |
+| *实时显示时间和日期* | *一键启动应用和网站* | *专注计时与通知提醒* |
+
+| 音乐控制 | 待办事项 | 设置界面 |
+|:-------:|:-------:|:-------:|
+| ![音乐模块](screenshots/feature-music.png) | ![待办模块](screenshots/feature-todo.png) | ![设置](screenshots/settings.png) |
+| *播放信息和控制按钮* | *任务管理* | *个性化配置* |
+
+</div>
 
 ## 💻 系统要求
 

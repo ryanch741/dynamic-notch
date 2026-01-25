@@ -101,13 +101,32 @@ open NotchIsland.xcodeproj
 
 ## 🖼️ Feature Preview
 
-| Feature Module | Preview |
-|---------------|---------|
-| **Time & Date** | Detailed time display on hover |
-| **Shortcuts** | Quick launch for apps/websites |
-| **Pomodoro Timer** | Focus timer with system notifications |
-| **Music Control** | Real-time playback info with controls |
-| **To-do List** | Manage tasks anytime, anywhere |
+### Dynamic Notch Interaction
+
+<div align="center">
+
+| Collapsed State | Expanded State |
+|:---------------:|:--------------:|
+| ![Notch Collapsed](screenshots/notch-collapsed.png) | ![Notch Expanded](screenshots/notch-expanded.png) |
+| *Notch in default collapsed state* | *Notch expanded showing module options* |
+
+</div>
+
+### Feature Modules
+
+<div align="center">
+
+| Time & Date | Shortcuts | Pomodoro Timer |
+|:-----------:|:---------:|:--------------:|
+| ![Time Module](screenshots/feature-time.png) | ![Shortcuts Module](screenshots/feature-shortcuts.png) | ![Pomodoro Module](screenshots/feature-pomodoro.png) |
+| *Real-time clock and date display* | *Quick launch apps and websites* | *Focus timer with notifications* |
+
+| Music Control | To-do List | Settings |
+|:-------------:|:----------:|:--------:|
+| ![Music Module](screenshots/feature-music.png) | ![Todo Module](screenshots/feature-todo.png) | ![Settings](screenshots/settings.png) |
+| *Playback info and controls* | *Task management* | *Customize your experience* |
+
+</div>
 
 ## 💻 System Requirements
 
