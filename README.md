@@ -105,6 +105,8 @@ open NotchIsland.xcodeproj
 
 <div align="center">
 
+![Interaction Demo](screenshots/demo-interraction.gif)
+
 | Collapsed State | Expanded State |
 |:---------------:|:--------------:|
 | ![Notch Collapsed](screenshots/notch-collapsed.png) | ![Notch Expanded](screenshots/notch-expanded.png) |
@@ -115,6 +117,8 @@ open NotchIsland.xcodeproj
 ### Feature Modules
 
 <div align="center">
+
+![Modules Demo](screenshots/demo-modules.gif)
 
 | Time & Date | Shortcuts | Pomodoro Timer |
 |:-----------:|:---------:|:--------------:|

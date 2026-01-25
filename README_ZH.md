@@ -105,6 +105,8 @@ open NotchIsland.xcodeproj
 
 <div align="center">
 
+![交互演示](screenshots/demo-interraction.gif)
+
 | 收起状态 | 展开状态 |
 |:-------:|:-------:|
 | ![刘海收起](screenshots/notch-collapsed.png) | ![刘海展开](screenshots/notch-expanded.png) |
@@ -115,6 +117,8 @@ open NotchIsland.xcodeproj
 ### 功能模块展示
 
 <div align="center">
+
+![模块演示](screenshots/demo-modules.gif)
 
 | 时间日期 | 快捷方式 | 番茄钟 |
 |:-------:|:-------:|:------:|
