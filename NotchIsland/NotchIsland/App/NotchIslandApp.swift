@@ -89,7 +89,7 @@ final class StatusBarController {
         popover = NSPopover()
 
         if let button = statusItem.button {
-            button.image = NSImage(systemSymbolName: "sparkles", accessibilityDescription: "NotchIsland")
+            button.image = NSImage(named: "MenuBarIcon")
             button.action = #selector(togglePopover(_:))
             button.target = self
         }
