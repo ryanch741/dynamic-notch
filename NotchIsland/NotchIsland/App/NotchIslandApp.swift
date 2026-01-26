@@ -192,6 +192,10 @@ final class NotchBarWindowController: NSWindowController, NSWindowDelegate {
     private var notchBarContainerView: NotchBarContainerView!
     private let targetScreen: NSScreen  // 目标屏幕
     
+    // 用于延迟展开的属性
+    private var expandTimer: Timer?
+    private var isMouseInTriggerArea = false
+    
     init(screen: NSScreen) {
         self.targetScreen = screen
         
@@ -243,6 +247,33 @@ final class NotchBarWindowController: NSWindowController, NSWindowDelegate {
         if let monitor = localMouseMonitor {
             NSEvent.removeMonitor(monitor)
         }
+        
+        // 释放定时器
+        expandTimer?.invalidate()
+        expandTimer = nil
+    }
+    
+    private func startExpandTimer() {
+        // 取消之前的定时器
+        expandTimer?.invalidate()
+        expandTimer = nil
+        
+        // 创建新的定时器，200毫秒后展开
+        expandTimer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { [weak self] _ in
+            guard let self = self else { return }
+            // 只有在鼠标仍然在触发区域内时才展开
+            if self.isMouseInTriggerArea {
+                self.viewModel.isExpanded = true
+            }
+            // 重置状态
+            self.isMouseInTriggerArea = false
+            self.expandTimer = nil
+        }
+    }
+    
+    private func cancelExpandTimer() {
+        expandTimer?.invalidate()
+        expandTimer = nil
     }
     
     private func setupTrackingArea() {
@@ -301,12 +332,25 @@ final class NotchBarWindowController: NSWindowController, NSWindowDelegate {
             // 已展开状态：检查是否在展开区域内
             if !expandedRect.contains(mouseLocation) {
                 viewModel.isExpanded = false
+                // 如果展开状态下鼠标离开展开区域，也取消可能存在的定时器
+                cancelExpandTimer()
+                // 重置触发区域状态
+                isMouseInTriggerArea = false
             }
         } else {
             // 收起状态：检查是否进入触发区域
-            if triggerRect.contains(mouseLocation) {
-                viewModel.isExpanded = true
+            let isInTriggerArea = triggerRect.contains(mouseLocation)
+            
+            if isInTriggerArea && !isMouseInTriggerArea {
+                // 鼠标刚进入触发区域，启动定时器
+                startExpandTimer()
+            } else if !isInTriggerArea && isMouseInTriggerArea {
+                // 鼠标刚离开触发区域，取消定时器
+                cancelExpandTimer()
             }
+            
+            // 更新鼠标在触发区域的状态
+            isMouseInTriggerArea = isInTriggerArea
         }
     }
     
