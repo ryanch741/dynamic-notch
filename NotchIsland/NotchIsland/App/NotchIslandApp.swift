@@ -316,9 +316,9 @@ final class NotchBarWindowController: NSWindowController, NSWindowDelegate {
         // 增加高度至37pt是为了确保在屏幕顶部边缘也能可靠触发，避免鼠标移到最顶部时无法触发的问题
         let triggerRect = NSRect(
             x: screenFrame.midX - collapsedWidth / 2,
-            y: screenFrame.maxY - 35,
+            y: screenFrame.maxY - 35,     // 保持原来的y坐标不变
             width: collapsedWidth,
-            height: 37
+            height: 37                    // 只增加高度，使触发区域向上扩展
         )
                 
         // 展开区域：完整的 700x250 窗口区域 + 5pt 顶部容差（解决边界值判断问题）
