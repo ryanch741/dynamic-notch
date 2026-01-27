@@ -65,7 +65,7 @@
 
 ### 方式一：下载 DMG 安装包（推荐）
 
-[⬇️ 下载 灵动刘海 v1.0.7](https://github.com/ryanch741/dynamic-notch/releases/download/v1.0.7/dynamic-notch-1.0.7.dmg)
+[⬇️ 下载 灵动刘海 v1.0.8](https://github.com/ryanch741/dynamic-notch/releases/download/v1.0.8/dynamic-notch-1.0.8.dmg)
 
 > **⚠️ 安全提示**：由于应用未经过 Apple 官方公证，首次打开可能会提示 *“Apple 无法验证是否包含恶意软件”*。
 > 
